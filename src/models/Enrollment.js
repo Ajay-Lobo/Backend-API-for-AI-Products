@@ -1,19 +1,15 @@
 import mongoose from "mongoose";
 
 const EnrollmentSchema = new mongoose.Schema({
-    newEnrollments: {
-        type: Number,
+    date: {
+        type: Date,
         required: true,
-        default:0
-    },
-    month: {
-        type: String,
-        required: true
-    },
-    year: {
+        default: Date.now
+      },
+      count: {
         type: Number,
         required: true
-    }
+      }
 }, { timestamps: true });
 
 const Enrollment = mongoose.model('Enrollment', EnrollmentSchema);

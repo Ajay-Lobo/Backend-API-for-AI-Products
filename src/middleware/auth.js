@@ -35,7 +35,7 @@ const verifyToken = (req, res, next) => {
   if (!token) {
     return res
       .status(403)
-      .json({ message: "Access denied. No token provided." }); // 403 Forbidden
+      .json({ message: "Access denied. No token provided." }); 
   }
 
   try {

@@ -10,12 +10,13 @@ const FinancialRecordSchema = new mongoose.Schema({
         required: true
     },
     profitMargin: {
-        type: String,
+        type: Number,
         required: true
     },
     date: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        unique: true
     }
 }, { timestamps: true });
 
