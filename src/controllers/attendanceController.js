@@ -1,6 +1,6 @@
 import { Children, Attendance } from "../models/index.js";
 
-export const recordAttendance = async (req, res) => {
+const recordAttendance = async (req, res) => {
   const { childId, status } = req.body;
   const date = req.body.date || new Date();
 
@@ -53,7 +53,7 @@ export const recordAttendance = async (req, res) => {
   }
 };
 
-export const updateAttendance = async (req, res) => {
+const updateAttendance = async (req, res) => {
   const { childId, status, date } = req.body;
 
   try {
@@ -93,7 +93,7 @@ export const updateAttendance = async (req, res) => {
   }
 };
 
-export const getAllAttendanceMetrics = async (req, res) => {
+const getAllAttendanceMetrics = async (req, res) => {
   try {
     const attendanceRecords = await Attendance.find();
 
@@ -154,3 +154,5 @@ export const getAllAttendanceMetrics = async (req, res) => {
     });
   }
 };
+
+export { recordAttendance, updateAttendance, getAllAttendanceMetrics };
